@@ -1,0 +1,8 @@
+Generated with the built-in image_gen tool.
+
+Use case: logo-brand
+Asset type: production macOS application icon, square 1024 by 1024 composition.
+Primary request: Design one polished, distinctive icon for Feishu Calendar, a native macOS menu bar app for viewing a weekly class timetable.
+Subject and composition: One large blue rounded-square app tile, centered and frontal, occupying about 86 percent of the canvas with a macOS continuous-curvature silhouette. On the tile, a single elegant warm-white calendar page with two small white binding tabs. Inside the white page is a very simple week-timeline motif: exactly three vertical lanes holding four chunky rounded event rectangles at staggered heights, in blue, teal, and a restrained amber accent. The blocks are substantial enough to remain legible at 32 pixels. A thin header separator, no day labels, no tiny grid, no numerals.
+Style: Premium native macOS icon design with subtle dimensionality, crisp geometry, gentle soft bevels and believable shallow shadows. Calm professional productivity app aesthetic. Blue tile with restrained rich-blue gradient, luminous white calendar face. Precise, minimal, no excessive gloss.
+Constraints: One standalone icon only, no mockup, no presentation board, no border around the image, no text, no letters, no watermark, no Feishu or Lark logo, no bird, no clock badge, no extra objects. Keep the entire rounded tile and its very subtle shadow visible with generous transparent outer margins. Exterior background must be truly transparent.

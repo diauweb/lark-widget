@@ -1,0 +1,28 @@
+# macOS and Xcode per-user state
+.DS_Store
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Build outputs
+/build/
+/DerivedData/
+.build/
+*.xcarchive
+*.xcresult
+*.dSYM/
+*.app/
+*.dmg
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local.xcconfig
+*.p12
+*.p8
+*.pem
+*.key
+*.mobileprovision
+*.provisionprofile
