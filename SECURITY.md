@@ -1,13 +1,60 @@
 # Security and privacy
 
-This app reads the selected Feishu calendar using user-supplied OAuth credentials. It requests `calendar:calendar:readonly` and `offline_access`, and uses a loopback-only HTTP listener during sign-in with a CSRF state check. The sandbox permits outbound API requests and the inbound local callback.
+## Calendar access
 
-The app secret, access token, and refresh token are stored in macOS Keychain. App ID, selected calendar ID/color, API base URL, semester start, and token expiry dates are stored in local UserDefaults. Calendar events are held in memory. There is no analytics or crash-reporting SDK in the project.
+The app reads the selected Feishu calendar with the credentials that you supply.
+It requests two OAuth scopes:
 
-Sign out deletes the access and refresh tokens and clears the in-memory calendar data. It retains the app secret and configuration for later sign-in. Never package a shared OAuth secret in the application; users configure their own Feishu apps.
+- `calendar:calendar:readonly`: calendar read access
+- `offline_access`: access for token refresh
 
-## Reporting a vulnerability
+During sign-in, the app receives the browser callback through a local HTTP listener.
+The listener accepts connections only through the loopback interface.
+The app checks the OAuth state value before it accepts the authorization code.
+The app sandbox permits outgoing network requests and the local callback connection.
 
-Use the repository's private vulnerability reporting feature if it is enabled on GitHub. Otherwise, open an issue asking the maintainer for a private reporting channel, without exploit details or sensitive data. Do not include tokens, secrets, authorization codes, personal calendar data, Keychain exports, or signing files in a public report.
+## Local storage
 
-If credentials were exposed, revoke or rotate them in Feishu. Removing a file from the latest commit does not remove it from Git history.
+The app stores these values in macOS Keychain:
+
+- App secret
+- Access token
+- Refresh token
+
+The app stores these settings in local UserDefaults:
+
+- App ID
+- Selected calendar ID and color
+- API base URL
+- Semester start date
+- Token expiration dates
+
+The app keeps calendar events in memory.
+The project has no analytics or crash reporting SDK.
+
+## Sign out
+
+To sign out, click **Sign out** in **Settings**.
+The app deletes the access and refresh tokens.
+It also clears the calendar data from memory.
+It keeps the app secret and saved settings for later sign-in.
+
+Each user must configure their own Feishu app.
+Do not put a shared app secret in source code or a distributed app.
+
+## Report a security problem
+
+If GitHub private vulnerability reporting is available, use it to report the problem.
+Otherwise, open a public issue to request a private contact method.
+Do not include exploit details in that public issue.
+
+Do not include these items in public reports or attachments:
+
+- Tokens or app secrets
+- Authorization codes or OAuth callback URLs that contain codes
+- Personal calendar data
+- Keychain exports
+- Apple signing files
+
+If you expose credentials, revoke or replace them in Feishu.
+If you delete a file from the latest commit, the file stays in Git history.
